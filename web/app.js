@@ -5,7 +5,14 @@ paypal.Buttons({
             method: 'post',
             headers: {
                 'content-type': 'application/json'
-            }
+            },
+            body: JSON.stringify({
+                cart: [{
+                    id: "YOUR_PRODUCT_ID",
+                    quantity: "YOUR_PRODUCT_QUANTITY",
+                  },
+                ],
+            }),
         }).then(function(res) {
             return res.json();
         }).then(function(orderData) {

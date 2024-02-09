@@ -1,9 +1,17 @@
 <?php
 // paypalapis.php
-
+// Assuming $app is a Slim application or similar that provides a routing mechanism
+require 'vendor/autoload.php';
 require_once 'paypalservices.php';
 
 // Assuming there's a routing system in place like Slim or FastRoute
+$app = new \Slim\App();
+
+// $app = new \Slim\App(array(
+//     'debug' => true
+// ));
+
+
 // Replace with your routing system accordingly
 
 $paypalService = new PaypalServices();

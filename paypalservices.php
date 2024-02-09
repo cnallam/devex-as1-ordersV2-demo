@@ -1,3 +1,4 @@
+<?php
 class PaypalServices {
     private $clientId;
     private $secret;
