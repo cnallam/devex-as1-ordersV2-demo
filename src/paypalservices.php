@@ -43,7 +43,7 @@ class PayPalServices
     {
         $accessToken = $this->authenticate();
     
-        // This is an example payload
+        // This is an example payload, Added manually example payload to test end to end.
         $orderData = [
             'intent' => 'CAPTURE',
             'purchase_units' => [
@@ -62,7 +62,7 @@ class PayPalServices
         //     'purchase_units' => [
         //         [
         //             'amount' => [
-        //                 'currency_code' => $requestData['currencyCodeType'],
+        //                 'currency_code' => $Session['currencyCodeType'],
         //                 'value' => $Session['PaymentAmount']
         //             ],
         //             'description' => $requestData['PaymentType']
