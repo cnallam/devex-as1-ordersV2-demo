@@ -42,7 +42,7 @@ class PayPalServices
     public function createOrder($response)
     {
         $accessToken = $this->authenticate();
-        // You would need to set up the order details according to your application's needs.
+    
         // This is an example payload
         $orderData = [
             'intent' => 'CAPTURE',
@@ -55,6 +55,24 @@ class PayPalServices
                 ]
             ]
         ];
+        // Converted $orderData .
+        // You would need to set up the order details according to your application's needs.
+        // $orderData = [
+        //     'intent' => 'CAPTURE',
+        //     'purchase_units' => [
+        //         [
+        //             'amount' => [
+        //                 'currency_code' => $requestData['currencyCodeType'],
+        //                 'value' => $Session['PaymentAmount']
+        //             ],
+        //             'description' => $requestData['PaymentType']
+        //         ]
+        //     ],
+        //     'application_context' => [
+        //         'return_url' => $requestData['returnURL'],
+        //         'cancel_url' => $requestData['cancelURL']
+        //     ]
+        // ];
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, "{$this->baseUrl}/v2/checkout/orders");
